@@ -5,12 +5,21 @@
 # was established when you compiled LAPACK and BLAS.
 fortranint = 8
 BLASLIB = -lblas
-LAPACKLIB = -llapack
+LAPACKLIB = -llapacki
+#
+# TODO: what is this for an intel compiler?
 FORTRANLIB = -lgfortran
 
-CPP = g++
-MPICPP = mpic++
-FORTRAN = gfortran
+#CPP = g++
+#MPICPP = mpic++
+#FORTRAN = gfortran
+#
+# Most environments will support these standard environment variables for compilers:
+CPP = $(CXX)
+MPICPP = $(MPICXX)
+FORTRAN = $(FC)
+MPIFORTRAN = $(MPIFC)
+
 
 # Set the optimization level. I prefer '-O3'.
 #opt = 
